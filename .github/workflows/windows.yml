@@ -11,17 +11,17 @@ jobs:
       matrix: ${{ steps.matrix.outputs.result }}
     steps:
       - name: Checkout tree
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           fetch-depth: 2
 
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@v47
+        uses: tj-actions/changed-files@24d32ffd492484c1d75e0c0b894501ddb9d30d62 # v47.0.0
 
       - name: Compute build matrix
         id: matrix
-        uses: actions/github-script@v9
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           script: |
             let changed_files = '${{ steps.changed-files.outputs.all_changed_files }}';
@@ -47,10 +47,10 @@ jobs:
     needs: analyse
     steps:
       - name: Checkout tree
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
 
       - name: Set-up OCaml
-        uses: ocaml/setup-ocaml@v3
+        uses: ocaml/setup-ocaml@15d660006c1d3110d77c34b7faa3bddefe8b82f0 # v3.7.0
         with:
           ocaml-compiler: "5"
           opam-repositories: |
