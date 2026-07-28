@@ -7,6 +7,6 @@ jobs:
     if: ${{ !contains(fromJSON(vars.MAINTAINERS), github.event.comment.user.login) && contains(github.event.issue.labels.*.name, fromJSON(vars.LABEL_TO_REMOVE)) }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-ecosystem/action-remove-labels@v1
+      - uses: actions-ecosystem/action-remove-labels@2ce5d41b4b6aa8503e285553f75ed56e0a40bae0 # v1.3.0
         with:
           labels: ${{ fromJSON(vars.LABEL_TO_REMOVE) }}
